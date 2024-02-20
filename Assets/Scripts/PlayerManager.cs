@@ -7,6 +7,8 @@ public class PlayerManager : MonoBehaviour
     public static bool isPlayerDead = false;
 
     void Update(){
-        if(isPlayerDead == true){}
+        if(isPlayerDead == true){
+            GameManager.ResetScene();
+        }
     }
 }
