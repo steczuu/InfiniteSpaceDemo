@@ -13,7 +13,7 @@ public class AsteroidSpawner : MonoBehaviour
 
 
     private void Start() {
-        CooldownTime = Random.Range(0f,10f);
+        CooldownTime = Random.Range(3f,10f);
         FirstWaveTimer = Random.Range(0f,10f);
 
         SpawnAsteroid = AsteroidCreation(FirstWaveTimer);
@@ -21,6 +21,10 @@ public class AsteroidSpawner : MonoBehaviour
     }
 
     void Update(){
+        if(GameManager.points == 3 || GameManager.points == GameManager.points + 3){
+            canSpawn = false;
+        }
+
         if(canSpawn){
             Instantiate(Asteroid, SpawnPos.position, transform.rotation);
             StartCoroutine(CooldowTimer());
