@@ -14,7 +14,10 @@ public class MapGenerator : MonoBehaviour
         if(transform.position.x <= offScreenPosition){
             Vector2 position = new Vector2(startingPosition, transform.position.y);
             transform.position = position;
-            GameManager.AddPoints();
+            
+            if(GameManager.canAddPoints){
+                GameManager.AddPoints();
+            }
         }
     }
 }

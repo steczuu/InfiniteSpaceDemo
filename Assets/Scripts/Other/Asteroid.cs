@@ -27,7 +27,8 @@ public class Asteroid : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")){
-            GameManager.ResetScene();
+            Destroy(other.gameObject);
+            GameManager.isPlayerDead = true;
             Debug.Log("Collison");
         }
 

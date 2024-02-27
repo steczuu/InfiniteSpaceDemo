@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsteroidSpawner : MonoBehaviour
+public class HostileSpawner : MonoBehaviour
 {
-    public GameObject Asteroid;
+    public GameObject HostileObject;
     public Transform SpawnPos;
-    private float CooldownTime;
-    private float FirstWaveTimer;
-    private IEnumerator SpawnAsteroid;
+    [SerializeField]private float CooldownTime;
+    [SerializeField]private float FirstWaveTimer;
+    private IEnumerator SpawnObject;
     private bool canSpawn = false;
 
 
@@ -16,17 +16,13 @@ public class AsteroidSpawner : MonoBehaviour
         CooldownTime = Random.Range(3f,10f);
         FirstWaveTimer = Random.Range(0f,10f);
 
-        SpawnAsteroid = AsteroidCreation(FirstWaveTimer);
-        StartCoroutine(SpawnAsteroid);
+        SpawnObject = ObjectCreation(FirstWaveTimer);
+        StartCoroutine(SpawnObject);
     }
 
     void Update(){
-        if(GameManager.points == 3 || GameManager.points == GameManager.points + 3){
-            canSpawn = false;
-        }
-
         if(canSpawn){
-            Instantiate(Asteroid, SpawnPos.position, transform.rotation);
+            Instantiate(HostileObject, SpawnPos.position, transform.rotation);
             StartCoroutine(CooldowTimer());
         }
     }
@@ -37,7 +33,7 @@ public class AsteroidSpawner : MonoBehaviour
         canSpawn = true;
     }
 
-    private IEnumerator AsteroidCreation(float firstWaveTimer){
+    private IEnumerator ObjectCreation(float firstWaveTimer){
         yield return new WaitForSeconds(firstWaveTimer);
         canSpawn = true;
     }
