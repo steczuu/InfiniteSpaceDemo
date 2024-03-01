@@ -13,14 +13,14 @@ public class PlayerBullet : MonoBehaviour
     }
 
     private void Update() {
-        transform.Translate(Vector2.right * 8f * Time.deltaTime);
+        transform.Translate(Vector2.up * 8f * Time.deltaTime);
     }
     
     void OnTriggerEnter2D(Collider2D other){
-        if(other.CompareTag("Enemy")){
+        /*if(other.CompareTag("Enemy")){
             Destroy(other.gameObject);
             Destroy(gameObject);
-        }
+        }*/
 
         if(other.CompareTag("Asteroid")){
             Destroy(gameObject);

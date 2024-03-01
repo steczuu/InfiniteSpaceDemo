@@ -12,7 +12,7 @@ public class MapGenerator : MonoBehaviour
         transform.Translate(Vector2.left * 3f * Time.deltaTime);
 
         if(transform.position.x <= offScreenPosition){
-            Vector2 position = new Vector2(startingPosition, transform.position.y);
+            Vector3 position = new Vector3(startingPosition, transform.position.y,transform.position.z);
             transform.position = position;
             
             if(GameManager.canAddPoints){

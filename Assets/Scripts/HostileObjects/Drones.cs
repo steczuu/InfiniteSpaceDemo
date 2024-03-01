@@ -1,44 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Drones : MonoBehaviour
 {
-    public Transform stoppingPointsObj;
-    public List<Transform> stoppingPoints;
-    private int pointsIndex = 0;
-    private float speed = 7f,timeToMove = 3f,stopDist = 0.2f;
+    PrefabsData prefabsData = new PrefabsData();
+    public List<Transform> stoppingPoints = new List<Transform>();
+    private int randomPoint;
+    private float speed = 5.5f,UpdateTime, StartingTime = 1.5f,ShootCooldownTime = 1f;
     public static bool dronesSpawned = false;
-    public static float Hp = 30f;
-    private bool canShoot;
+    public static float Hp = 50f;
+    private bool canShoot = true;
     public Transform barrel;
+    public GameObject bullet;
     
     private void Start() {
+        //stoppingPoints.AddRange(prefabsData.dronePoints.ToList());
+
+        randomPoint = Random.Range(0, stoppingPoints.Count);
+        UpdateTime = StartingTime;
         dronesSpawned = true;
         Debug.Log(dronesSpawned);
-        InitializeRoute();
-        MoveToNext();
     }
 
     void Update(){
-        float distanceToPoint = Vector2.Distance(transform.position, stoppingPoints[pointsIndex].position);
+        if(canShoot){
+            Shoot();
+            StartCoroutine(CooldownTimer());
+        }
 
-        if(distanceToPoint < stopDist){
-            MoveToNext();
+        if(Hp <= 0f){
+            Destroy(gameObject);
+            DroneSpawnerTest.HasSpawned = false;
+        }
+
+        transform.position = Vector2.MoveTowards(transform.position, stoppingPoints[randomPoint].position, speed * Time.deltaTime);
+
+        if(Vector2.Distance(transform.position, stoppingPoints[randomPoint].position) < 0.2f){
+            if(UpdateTime <= 0 ){
+                randomPoint = Random.Range(0, stoppingPoints.Count);
+                UpdateTime = StartingTime;
+            }else{
+                UpdateTime -= Time.deltaTime;
+            }
+        }
+    }
+     
+    void Shoot(){
+        Instantiate(bullet, barrel.position, transform.rotation);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.CompareTag("Bullet")){
+            Hp -= 10f;
         }
     }
 
-    void InitializeRoute(){
-        foreach (Transform child in stoppingPointsObj){
-            stoppingPoints.Add(child);
-        }
-    }
-
-    void MoveToNext(){
-        if(stoppingPoints.Count == 0) return;
-
-        transform.position = Vector2.MoveTowards(transform.position, stoppingPoints[pointsIndex].position, speed*Time.deltaTime);
-
-        pointsIndex = (pointsIndex + 1) % stoppingPoints.Count;
+    IEnumerator CooldownTimer(){
+        canShoot = false;
+        yield return new WaitForSeconds(ShootCooldownTime);
+        canShoot = true;
     }
 }

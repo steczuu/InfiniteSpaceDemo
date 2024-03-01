@@ -11,7 +11,7 @@ public class Asteroid : MonoBehaviour
 
     private void Start() {
         speed = Random.Range(3f,9f);
-        HP = Random.Range(30f,70f);
+        HP = Random.Range(10f,30f);
 
         destroyAsteroid = _destroyAsteroid(selfDestructTime);
         StartCoroutine(destroyAsteroid);
@@ -33,7 +33,7 @@ public class Asteroid : MonoBehaviour
         }
 
         if(other.CompareTag("Bullet")){
-            HP -= Random.Range(4f,10f);
+            HP -= 5f; 
             Debug.Log(HP);
         }
     }

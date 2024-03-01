@@ -20,6 +20,7 @@ public class EnemyBullet : MonoBehaviour
         if(other.gameObject.tag == "Player"){
             Destroy(other.gameObject);
             Destroy(gameObject);
+            GameManager.isPlayerDead = true;
         }
     }
 

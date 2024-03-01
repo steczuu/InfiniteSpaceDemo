@@ -5,13 +5,20 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {
     public Transform player;
-    private float speed = 10f,HP = 50f;
+    private float speed = 6f,HP = 30f;
+    public static bool isMissileSpawned;
+
+    private void Start() {
+        isMissileSpawned = true;
+        player = GameObject.FindWithTag("Player").transform;
+    }
 
     void Update(){
         MoveTowardsPlayer();
 
         if(HP <= 0){
             Destroy(gameObject);
+            isMissileSpawned = false;
         }
     }
 
@@ -28,10 +35,11 @@ public class Missile : MonoBehaviour
         if(other.CompareTag("Player")){
             Destroy(other.gameObject);
             Destroy(gameObject);
+            isMissileSpawned = false;
             GameManager.isPlayerDead = true;
         }
         if(other.CompareTag("Bullet")){
-            HP -= 5f;
+            HP -= 10f;
         }
     }
 }

@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class HostileSpawner : MonoBehaviour
 {
-    public GameObject HostileObject;
+    public GameObject[] HostileObjects;
     public Transform SpawnPos;
     [SerializeField]private float CooldownTime;
     [SerializeField]private float FirstWaveTimer;
     private IEnumerator SpawnObject;
     private bool canSpawn = false;
+    public bool isLaserSpawner,isMissileSpawner,isAsteroidSpawner;
 
 
     private void Start() {
-        CooldownTime = Random.Range(3f,10f);
+        CooldownTime = Random.Range(3f,12f);
         FirstWaveTimer = Random.Range(0f,10f);
 
         SpawnObject = ObjectCreation(FirstWaveTimer);
@@ -21,8 +22,18 @@ public class HostileSpawner : MonoBehaviour
     }
 
     void Update(){
-        if(canSpawn){
-            Instantiate(HostileObject, SpawnPos.position, transform.rotation);
+        if(canSpawn && isAsteroidSpawner){
+            Instantiate(HostileObjects[0], SpawnPos.position, transform.rotation);
+            StartCoroutine(CooldowTimer());
+        }
+
+        if(canSpawn && isLaserSpawner){
+            Instantiate(HostileObjects[1], SpawnPos.position, transform.rotation);
+            StartCoroutine(CooldowTimer());
+        }
+
+        if(canSpawn && isMissileSpawner && !Drones.dronesSpawned && GameManager.points > 10){
+            Instantiate(HostileObjects[2], SpawnPos.position, transform.rotation);
             StartCoroutine(CooldowTimer());
         }
     }

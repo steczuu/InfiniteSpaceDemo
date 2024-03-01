@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    public GameObject projectile,muzzleFlash;
-    public Transform weaponPos;
-    private int frames = 1;
-    private float CooldownTime = 1f;
+    public GameObject projectile,muzzleFlash,muzzleFlash_2;
+    public Transform weaponPos,secondWeaponPos;
+    [SerializeField]private int frames = 1;
+    private float CooldownTime = 0.8f;
     private bool canShoot = true,isFlashing = false;
 
     private void Start() {
         muzzleFlash.SetActive(false);
+        muzzleFlash_2.SetActive(false);
     }
 
     void Update(){
         if(Input.GetKey(KeyCode.Space) && canShoot){
             Instantiate(projectile, weaponPos.position, transform.rotation);
+            Instantiate(projectile, secondWeaponPos.position, transform.rotation);
             StartCoroutine(CooldowTimer());
 
             if(!isFlashing){
@@ -29,6 +31,7 @@ public class Shooting : MonoBehaviour
 
     IEnumerator MakeFlash(){
         muzzleFlash.SetActive(true);
+        muzzleFlash_2.SetActive(true);
         var framesPassed = 0;
         isFlashing = true;
 
@@ -38,6 +41,7 @@ public class Shooting : MonoBehaviour
         }
 
         muzzleFlash.SetActive(false);
+        muzzleFlash_2.SetActive(false);
         isFlashing = false;
     }
 
