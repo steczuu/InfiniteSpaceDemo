@@ -15,5 +15,5 @@ public class Save : MonoBehaviour
 
 [System.Serializable]
 public class HighScoreData{
-    public int value = GameManager.points;
+    public int value;
 }

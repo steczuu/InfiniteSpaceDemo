@@ -206,18 +206,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 713030864}
-        m_TargetAssemblyTypeName: GameOverPanelControl, Assembly-CSharp
-        m_MethodName: ReturnToMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1887147474}
         m_TargetAssemblyTypeName: Save, Assembly-CSharp
         m_MethodName: SaveToJson
@@ -445,13 +433,12 @@ MonoBehaviour:
   HostileObjects:
   - {fileID: 3997456029996668231, guid: 07ab9850b2860e3459d1487abf9381cf, type: 3}
   - {fileID: 6049054128237314357, guid: 2e7c29a12de05a4458ee939f8ddc4d18, type: 3}
-  - {fileID: 4796007786531873083, guid: acb2f517b0146ba49893dfff98e640db, type: 3}
+  - {fileID: 3231057745195223445, guid: acb2f517b0146ba49893dfff98e640db, type: 3}
   - {fileID: 7796546474438410150, guid: 2ef4bc4d6cd0adb47bb22d409faceb37, type: 3}
   SpawnPos: {fileID: 198013270}
   CooldownTime: 0
   FirstWaveTimer: 0
   isLaserSpawner: 0
-  isDroneSpawner: 0
   isMissileSpawner: 1
   isAsteroidSpawner: 0
 --- !u!1 &198506492
@@ -529,14 +516,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67dfdba044ba45d43a7b5b46bd2a19cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HostileObjects: []
+  HostileObjects:
+  - {fileID: 3997456029996668231, guid: 07ab9850b2860e3459d1487abf9381cf, type: 3}
+  - {fileID: 6049054128237314357, guid: 2e7c29a12de05a4458ee939f8ddc4d18, type: 3}
+  - {fileID: 4796007786531873083, guid: acb2f517b0146ba49893dfff98e640db, type: 3}
+  - {fileID: 7796546474438410150, guid: 2ef4bc4d6cd0adb47bb22d409faceb37, type: 3}
   SpawnPos: {fileID: 281923964}
   CooldownTime: 0
   FirstWaveTimer: 0
   isLaserSpawner: 0
-  isDroneSpawner: 0
   isMissileSpawner: 0
-  isAsteroidSpawner: 0
+  isAsteroidSpawner: 1
 --- !u!1 &434931833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,6 +1042,7 @@ Transform:
   - {fileID: 853086652}
   - {fileID: 1005008436}
   - {fileID: 976855571}
+  - {fileID: 1411495978}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &819291446
@@ -1131,14 +1122,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67dfdba044ba45d43a7b5b46bd2a19cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HostileObjects: []
+  HostileObjects:
+  - {fileID: 3997456029996668231, guid: 07ab9850b2860e3459d1487abf9381cf, type: 3}
+  - {fileID: 6049054128237314357, guid: 2e7c29a12de05a4458ee939f8ddc4d18, type: 3}
+  - {fileID: 4796007786531873083, guid: acb2f517b0146ba49893dfff98e640db, type: 3}
+  - {fileID: 7796546474438410150, guid: 2ef4bc4d6cd0adb47bb22d409faceb37, type: 3}
   SpawnPos: {fileID: 853086652}
   CooldownTime: 0
   FirstWaveTimer: 0
   isLaserSpawner: 0
-  isDroneSpawner: 0
   isMissileSpawner: 0
-  isAsteroidSpawner: 0
+  isAsteroidSpawner: 1
 --- !u!1 &856886615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,14 +1310,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67dfdba044ba45d43a7b5b46bd2a19cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HostileObjects: []
+  HostileObjects:
+  - {fileID: 3997456029996668231, guid: 07ab9850b2860e3459d1487abf9381cf, type: 3}
+  - {fileID: 6049054128237314357, guid: 2e7c29a12de05a4458ee939f8ddc4d18, type: 3}
+  - {fileID: 4796007786531873083, guid: acb2f517b0146ba49893dfff98e640db, type: 3}
+  - {fileID: 7796546474438410150, guid: 2ef4bc4d6cd0adb47bb22d409faceb37, type: 3}
   SpawnPos: {fileID: 976855571}
   CooldownTime: 0
   FirstWaveTimer: 0
   isLaserSpawner: 0
-  isDroneSpawner: 0
   isMissileSpawner: 0
-  isAsteroidSpawner: 0
+  isAsteroidSpawner: 1
 --- !u!1 &1005008435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,14 +1365,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67dfdba044ba45d43a7b5b46bd2a19cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HostileObjects: []
+  HostileObjects:
+  - {fileID: 3997456029996668231, guid: 07ab9850b2860e3459d1487abf9381cf, type: 3}
+  - {fileID: 6049054128237314357, guid: 2e7c29a12de05a4458ee939f8ddc4d18, type: 3}
+  - {fileID: 4796007786531873083, guid: acb2f517b0146ba49893dfff98e640db, type: 3}
+  - {fileID: 7796546474438410150, guid: 2ef4bc4d6cd0adb47bb22d409faceb37, type: 3}
   SpawnPos: {fileID: 1005008436}
   CooldownTime: 0
   FirstWaveTimer: 0
   isLaserSpawner: 0
-  isDroneSpawner: 0
   isMissileSpawner: 0
-  isAsteroidSpawner: 0
+  isAsteroidSpawner: 1
 --- !u!1 &1008394792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,7 +1668,7 @@ Transform:
   m_GameObject: {fileID: 1202791662}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: -1}
+  m_LocalPosition: {x: 2, y: 2, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1686,12 +1686,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67dfdba044ba45d43a7b5b46bd2a19cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HostileObjects: []
+  HostileObjects:
+  - {fileID: 3997456029996668231, guid: 07ab9850b2860e3459d1487abf9381cf, type: 3}
+  - {fileID: 5513615422029352121, guid: 2e7c29a12de05a4458ee939f8ddc4d18, type: 3}
+  - {fileID: 4796007786531873083, guid: acb2f517b0146ba49893dfff98e640db, type: 3}
+  - {fileID: 7796546474438410150, guid: 2ef4bc4d6cd0adb47bb22d409faceb37, type: 3}
   SpawnPos: {fileID: 1202791663}
   CooldownTime: 0
   FirstWaveTimer: 0
   isLaserSpawner: 1
-  isDroneSpawner: 0
   isMissileSpawner: 0
   isAsteroidSpawner: 0
 --- !u!1 &1272634765
@@ -6916,7 +6919,7 @@ Transform:
   m_GameObject: {fileID: 1400273170}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2407772, y: 0.7738902, z: 0.0061268955}
+  m_LocalPosition: {x: 0.241, y: 0.649, z: 0.0061268955}
   m_LocalScale: {x: 0.61588967, y: 0.62015486, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7022,7 +7025,7 @@ Transform:
   m_GameObject: {fileID: 1400480683}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.82, y: -0.55, z: 0}
+  m_LocalPosition: {x: -7.82, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7052,7 +7055,7 @@ GameObject:
   - component: {fileID: 1411495978}
   - component: {fileID: 1411495977}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DroneSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7070,7 +7073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff4721b95e67f34e9febfe0a1619822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HostileObject: {fileID: 5091623431542509907, guid: 2ef4bc4d6cd0adb47bb22d409faceb37, type: 3}
+  HostileObject: {fileID: 1692242739395096958, guid: 2ef4bc4d6cd0adb47bb22d409faceb37, type: 3}
   SpawnPos: {fileID: 1411495978}
 --- !u!4 &1411495978
 Transform:
@@ -7080,12 +7083,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411495976}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.09, y: -0.35, z: 1.1530304}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.7883348, y: 0.18405423, z: 1.1695646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 795982076}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1488878953
 GameObject:
@@ -7249,7 +7252,7 @@ Transform:
   m_GameObject: {fileID: 1498768624}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: -2.02, z: -1}
+  m_LocalPosition: {x: 2, y: -2.02, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7267,12 +7270,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67dfdba044ba45d43a7b5b46bd2a19cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HostileObjects: []
+  HostileObjects:
+  - {fileID: 3997456029996668231, guid: 07ab9850b2860e3459d1487abf9381cf, type: 3}
+  - {fileID: 5513615422029352121, guid: 2e7c29a12de05a4458ee939f8ddc4d18, type: 3}
+  - {fileID: 4796007786531873083, guid: acb2f517b0146ba49893dfff98e640db, type: 3}
+  - {fileID: 7796546474438410150, guid: 2ef4bc4d6cd0adb47bb22d409faceb37, type: 3}
   SpawnPos: {fileID: 1498768625}
   CooldownTime: 0
   FirstWaveTimer: 0
   isLaserSpawner: 1
-  isDroneSpawner: 0
   isMissileSpawner: 0
   isAsteroidSpawner: 0
 --- !u!1 &1526933283
@@ -7598,18 +7604,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 713030864}
-        m_TargetAssemblyTypeName: GameOverPanelControl, Assembly-CSharp
-        m_MethodName: QuitGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1887147474}
         m_TargetAssemblyTypeName: Save, Assembly-CSharp
         m_MethodName: SaveToJson
@@ -7704,14 +7698,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67dfdba044ba45d43a7b5b46bd2a19cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HostileObjects: []
+  HostileObjects:
+  - {fileID: 3997456029996668231, guid: 07ab9850b2860e3459d1487abf9381cf, type: 3}
+  - {fileID: 6049054128237314357, guid: 2e7c29a12de05a4458ee939f8ddc4d18, type: 3}
+  - {fileID: 4796007786531873083, guid: acb2f517b0146ba49893dfff98e640db, type: 3}
+  - {fileID: 7796546474438410150, guid: 2ef4bc4d6cd0adb47bb22d409faceb37, type: 3}
   SpawnPos: {fileID: 1737738307}
   CooldownTime: 0
   FirstWaveTimer: 0
   isLaserSpawner: 0
-  isDroneSpawner: 0
   isMissileSpawner: 0
-  isAsteroidSpawner: 0
+  isAsteroidSpawner: 1
 --- !u!1 &1766823618
 GameObject:
   m_ObjectHideFlags: 0
@@ -8188,7 +8185,7 @@ Transform:
   m_GameObject: {fileID: 2022671573}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: -0, z: -1}
+  m_LocalPosition: {x: 2, y: -0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8206,12 +8203,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67dfdba044ba45d43a7b5b46bd2a19cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HostileObjects: []
+  HostileObjects:
+  - {fileID: 3997456029996668231, guid: 07ab9850b2860e3459d1487abf9381cf, type: 3}
+  - {fileID: 5513615422029352121, guid: 2e7c29a12de05a4458ee939f8ddc4d18, type: 3}
+  - {fileID: 4796007786531873083, guid: acb2f517b0146ba49893dfff98e640db, type: 3}
+  - {fileID: 7796546474438410150, guid: 2ef4bc4d6cd0adb47bb22d409faceb37, type: 3}
   SpawnPos: {fileID: 2022671574}
   CooldownTime: 0
   FirstWaveTimer: 0
   isLaserSpawner: 1
-  isDroneSpawner: 0
   isMissileSpawner: 0
   isAsteroidSpawner: 0
 --- !u!1 &2039637091
@@ -8292,7 +8292,7 @@ Transform:
   m_GameObject: {fileID: 2039637091}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.22114, y: 0.77389, z: 0.0061268955}
+  m_LocalPosition: {x: -0.221, y: 0.649, z: 0.0061268955}
   m_LocalScale: {x: 0.61588967, y: 0.62015486, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8312,5 +8312,4 @@ SceneRoots:
   - {fileID: 198506493}
   - {fileID: 819291447}
   - {fileID: 1345592555}
-  - {fileID: 1411495978}
   - {fileID: 1887147475}

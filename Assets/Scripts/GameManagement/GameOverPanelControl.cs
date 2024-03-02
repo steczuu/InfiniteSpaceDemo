@@ -25,7 +25,7 @@ public class GameOverPanelControl : MonoBehaviour
     }
 
     public void RestartScene(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         GameManager.isPlayerDead = false;
         GameManager.canAddPoints = true;
     }
