@@ -14,6 +14,7 @@ public class Drones : MonoBehaviour
     private bool canShoot = true;
     public Transform barrel;
     public GameObject bullet;
+    public AudioSource audioSource;
     
     private void Start() {
         //stoppingPoints.AddRange(prefabsData.dronePoints.ToList());
@@ -33,6 +34,7 @@ public class Drones : MonoBehaviour
         if(Hp <= 0f){
             Destroy(gameObject);
             DroneSpawnerTest.HasSpawned = false;
+            audioSource.Play();
         }
 
         transform.position = Vector2.MoveTowards(transform.position, stoppingPoints[randomPoint].position, speed * Time.deltaTime);

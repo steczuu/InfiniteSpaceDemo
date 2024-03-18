@@ -11,7 +11,7 @@ public class DroneSpawnerTest : MonoBehaviour
     public Transform HostileObject,SpawnPos;
     
     private void Start() {
-        CooldownTime = Random.Range(3f,10f);
+        CooldownTime = Random.Range(10f,20f);
         FirstWaveTimer = Random.Range(0f,10f);
 
         SpawnObject = ObjectCreation(FirstWaveTimer);
@@ -22,7 +22,7 @@ public class DroneSpawnerTest : MonoBehaviour
         if(HasSpawned) canSpawn = false;
 
         if(canSpawn && !Missile.isMissileSpawned && GameManager.points > 5){
-            Instantiate(HostileObject, SpawnPos.position, Quaternion.identity);
+            Instantiate(HostileObject, SpawnPos.position, Quaternion.Euler(new Vector3(0f,0f,90f)));
             HasSpawned = true;
             StartCoroutine(CooldowTimer());
         }
@@ -32,6 +32,7 @@ public class DroneSpawnerTest : MonoBehaviour
         canSpawn = false;
         yield return new WaitForSeconds(CooldownTime);
         canSpawn = true;
+        HasSpawned = false;
     }
 
     private IEnumerator ObjectCreation(float firstWaveTimer){

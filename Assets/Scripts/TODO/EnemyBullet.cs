@@ -13,7 +13,7 @@ public class EnemyBullet : MonoBehaviour
     }
 
     private void Update() {
-        transform.Translate(Vector2.left * 7f * Time.deltaTime);
+        transform.Translate(Vector2.up * 7f * Time.deltaTime);
     }
     
     void OnTriggerEnter2D(Collider2D other){

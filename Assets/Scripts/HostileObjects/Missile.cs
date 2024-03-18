@@ -7,6 +7,7 @@ public class Missile : MonoBehaviour
     public Transform player;
     private float speed = 6f,HP = 30f;
     public static bool isMissileSpawned;
+    public AudioSource audioSource;
 
     private void Start() {
         isMissileSpawned = true;
@@ -17,6 +18,7 @@ public class Missile : MonoBehaviour
         MoveTowardsPlayer();
 
         if(HP <= 0){
+            audioSource.Play();
             Destroy(gameObject);
             isMissileSpawned = false;
         }
@@ -35,6 +37,7 @@ public class Missile : MonoBehaviour
         if(other.CompareTag("Player")){
             Destroy(other.gameObject);
             Destroy(gameObject);
+            audioSource.Play();
             isMissileSpawned = false;
             GameManager.isPlayerDead = true;
         }

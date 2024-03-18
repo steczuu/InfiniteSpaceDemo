@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  audioSource: {fileID: 1833228587559500125, guid: a362103cab4dae4438e32d2b37f48e83, type: 3}
 --- !u!61 &4743177879531885778
 BoxCollider2D:
   m_ObjectHideFlags: 0

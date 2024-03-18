@@ -8,11 +8,13 @@ public class Asteroid : MonoBehaviour
     private float speed,HP;
     private float selfDestructTime = 10f;
     private IEnumerator destroyAsteroid;
+    public AudioSource audioSource;
 
     private void Start() {
         speed = Random.Range(3f,9f);
         HP = Random.Range(10f,30f);
-
+        
+        audioSource = AudioSource.FindObjectOfType<AudioSource>();
         destroyAsteroid = _destroyAsteroid(selfDestructTime);
         StartCoroutine(destroyAsteroid);
     }
@@ -22,6 +24,7 @@ public class Asteroid : MonoBehaviour
 
         if(HP <= 0){
             Destroy(gameObject);
+            audioSource.Play();
         }
     }
 

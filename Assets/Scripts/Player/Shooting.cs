@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     public Transform weaponPos,secondWeaponPos;
     [SerializeField]private int frames = 1;
     private float CooldownTime = 0.8f;
+    public AudioSource audioSource;
     private bool canShoot = true,isFlashing = false;
 
     private void Start() {
@@ -21,6 +22,7 @@ public class Shooting : MonoBehaviour
             Instantiate(projectile, weaponPos.position, transform.rotation);
             Instantiate(projectile, secondWeaponPos.position, transform.rotation);
             StartCoroutine(CooldowTimer());
+            audioSource.Play();
 
             if(!isFlashing){
                 StartCoroutine(MakeFlash());
